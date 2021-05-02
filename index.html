@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/glide.core.min.css">
+    <link rel="stylesheet" href="css/glide.theme.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" 
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="shortcut icon" type="image/png" href="img/icon.png">
+  </head>
+
+  <body>
+    <!-- Navigation starts from here -->
+    <nav class="navbar">
+      <div class="max-width">
+          <div class="logo"><a href="#">Lom<span>aia.</span></a></div>
+          <ul class="menu">
+              <li><a href="#home" class="menu-btn">Home</a></li>
+              <li><a href="#about" class="menu-btn">About</a></li>
+              <li><a href="#projects" class="menu-btn">Projects</a></li>
+              <li><a href="#skills" class="menu-btn">Skills</a></li>
+              <li><a href="#contact" class="menu-btn">Contact</a></li>
+          </ul>
+          <div class="menu-btn" id="menu-btn">
+              <i class="fas fa-bars" style="position: absolute;
+              right: 20px;
+              top: 23px;"></i>
+          </div>
+      </div>
+      <!-- Toggle Navigation Menu -->
+      <div id="myNav" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+          <a href="#home" class="menu-btn" onclick="closeNav()">Home</a>
+          <a href="#about" class="menu-btn" onclick="closeNav()">About</a>
+          <a href="#projects" class="menu-btn" onclick="closeNav()">Projects</a>
+          <a href="#skills" class="menu-btn" onclick="closeNav()">Skills</a>
+          <a href="#contact" class="menu-btn" onclick="closeNav()">Contact</a>
+        </div>
+      </div>
+    </nav>
+    <!-- Home Page  -->
+    <section class="home" id="home">
+      <div class="max-width">
+        <div class="home-wrapper">
+          <div class="row">
+            <div class="home-content">
+                <div class="text-1">Hello, my name is</div>
+                <div class="text-2">Giorgi Lomaia</div>
+                <div class="text-3">And I'm a <span class="typing">Jr Front-end Developer</span></div>
+                <a href="#" id="myBtn">Hire me</a>
+            </div>
+          </div>
+          <div class="img">
+            <img src="img/me.png" alt="">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Page -->
+    <section class="about" id="about">
+      <div class="max-width">
+        <h2 class="title">About me</h2>
+            <div class="about-content">
+                <div class="column left">
+                    <img src="img/IMG_1898.jpeg" alt="">
+                </div>
+                <div class="column right">
+                    <div class="text">I'm Giorgi Lomaia I'm a <span class="typing-2">Junior Front End Web Developer</span></div>
+                    <p>Hello, I'm Giorgi Lomaia, From Zugdidi, Georgia ☀️. I'm web developer focused on Front-End Development ❤️.Coding has been my passion since I've wrote first "Hello World" line.  I describe myself as a passionate developer who loves coding and learning more about technologies💻. </p>
+                    <a href="CV.pdf" target="_blank">Download CV</a>
+                </div>
+            </div>
+      </div>
+    </section>
+    
+   <!-- Projects Page -->
+   <section class="projects" id="projects">
+    <div class="max-width">
+      <h2 class="title">My Projects</h2>
+      <div class="project-content">
+      <div class="glide">
+        <div class="glide__track" data-glide-el="track">
+          <ul class="glide__slides">
+            <li class="glide__slide">
+              <div class="card">
+                <div class="box">
+                    <a href="https://lomaia17.github.io/jscalculator/" target="_blank">
+                      <img src="img/calculator.png" alt="">
+                      <div class="text">Calculator</div>
+                      <p>Technologies💻:HTML, CSS, Javascript.</p>
+                    </a> 
+                </div>
+            </div>
+            </li>
+            <li class="glide__slide">
+              <div class="card" style="padding-bottom: 40px;">
+                <div class="box">
+                    <a href="https://lomaia17.github.io/shualeduri/" target="_blank">
+                      <img src="img/Page2.png" alt="">
+                      <div class="text">Website with 2 page</div>
+                      <p>Technologies💻:HTML, CSS.</p>
+                    </a>
+                </div>
+            </div>
+            </li>
+            <li class="glide__slide">
+              <div class="card">
+                <div class="box">
+                  <a href="https://lomaia17.github.io/finalforportfolio/" target="_blank">
+                    <img src="img/page3.png" alt="">
+                    <div class="text">Website with 3 page</div>
+                    <p>Technologies💻:HTML, CSS, Javascript, API.</p>
+                  </a>
+                </div>
+            </div>
+            </li>
+            <li class="glide__slide">
+              <div class="card" style="padding-bottom: 40px;">
+                <div class="box">
+                    <a href="https://lomaia17.github.io/galaxyanimation/" target="_blank">
+                      <img src="img/animation.png" alt="">
+                      <div class="text">First Animation</div>
+                      <p>Technologies💻:HTML, CSS.</p>
+                    </a>
+                </div>
+            </div>
+            </li>
+            <li class="glide__slide">
+              <div class="card" style="padding-bottom: 40px;">
+                <div class="box">
+                    <a href="https://lomaia17.github.io/illuminated/" target="_blank">
+                      <img src="img/page4.png" alt="">
+                      <div class="text">First Project</div>
+                      <p>Technologies💻:HTML, CSS.</p>
+                    </a>
+                </div>
+            </div>
+            </li>
+          </ul>
+        </div>
+        <div class="glide__arrows" data-glide-el="controls">
+          <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><i class="fas fa-angle-left"></i></button>
+          <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><i class="fas fa-angle-right"></i></button>
+        </div>
+      </div>
+      </div>
+    </div>
+   </section>
+     <!-- Skills section start -->
+     <section class="skills" id="skills">
+      <div class="max-width">
+          <h2 class="title">My Skills</h2>
+          <div class="serv-content">
+              <div class="card">
+                  <div class="box">
+                      <img src="img/html.png" alt="">
+                      <div class="text" style="margin-top: 35px;">HTML</div>
+                  </div>
+              </div>
+              <div class="card">
+                  <div class="box">
+                      <img src="img/css.png" alt="">
+                      <div class="text">CSS</div>
+                      <p>Frameworks : Bootstrap , Tailwind.</p>
+                  </div>
+              </div>
+              <div class="card">
+                  <div class="box">
+                      <img src="img/js.png" alt="">
+                      <div class="text"  style="margin-top:28px;">Javascript</div>
+                  </div>
+              </div>
+             </div>
+          </div>
+      </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="max-width">
+        <h2 class="title">Contact me</h2>
+        <div class="contact-content">
+            <div class="column left">
+                <div class="text">Get in Touch</div>
+                <div class="icons">
+                    <div class="row">
+                        <i class="fas fa-user"></i>
+                        <div class="info">
+                            <div class="head">Name</div>
+                            <div class="sub-title">Giorgi Lomaia</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="info">
+                            <div class="head">Address</div>
+                            <div class="sub-title">Zugdidi, Georgia</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <i class="fas fa-envelope"></i>
+                        <div class="info">
+                            <div class="head">Email</div>
+                            <div class="sub-title">giorgilomaia1710@gmail.com</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                      <i class="fas fa-phone"></i>
+                      <div class="info">
+                          <div class="head">Phone</div>
+                          <div class="sub-title">995-592-09-37-37</div>
+                      </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </section>
+    <!-- Modal --> 
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Contact Me</h2>
+          <span class="close">&times;</span>
+        </div>
+        <div class="modal-body">
+          <p>My Social Media Links:</p>
+        </div>
+        <div class="modal-footer">
+          <div class="soc-icons">
+            <a href="https://www.facebook.com/profile.php?id=100053544300179" target="_blank">
+             <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/giorgilomaia/" target="_blank">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://twitter.com/GiorgiLomaia" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>  
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  <!-- Glide Js -->
+  <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+  <script>
+    const config = {
+      type: "carousel",
+      perView: 3,
+      breakpoints:{
+        1024: {
+          perView:2
+        },
+        768: {
+          perView:1
+        }
+      }
+    };
+    new Glide('.glide', config).mount()
+  </script>
+  <!-- Javascript -->
+   <script src="main.js"> 
+
+  </script>
+  </body>
+</html>

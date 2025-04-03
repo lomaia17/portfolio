@@ -278,11 +278,16 @@ section .title::before {
 .projects  .card , .skills .card{
   background: #222;
   border-radius: 6px;
-  margin-left: 20px;
   padding: 25px 35px;
   text-align: center;
   overflow: hidden;
   transition: all 0.3s ease;
+}
+.projects  .card:not(:first-child) , .skills .card:not(:first-child){
+  margin-left: 20px;
+}
+.projects .card{
+  height: 400px;
 }
 .projects .card:hover{
   background: crimson;

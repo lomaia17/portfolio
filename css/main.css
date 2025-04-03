@@ -282,9 +282,13 @@ section .title::before {
   text-align: center;
   overflow: hidden;
   transition: all 0.3s ease;
-}
-.projects  .card:not(:first-child) , .skills .card:not(:first-child){
   margin-left: 20px;
+}
+.line-height{
+  line-height: 20px;
+}
+.glide__slide .card{
+  height: 400px;
 }
 .projects .card{
   height: 400px;

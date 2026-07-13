@@ -1,50 +1,74 @@
-const nav = document.querySelector('.navbar');
-let navTop = nav.offsetTop;
+// Typing effect in the address bar
+const roles = ['full-stack-developer', 'wordpress-engineer', 'react-developer', 'shopify-builder'];
+const addrTyped = document.getElementById('addrTyped');
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-function fixedNav() {
-  if (window.scrollY > navTop) {    
-    nav.classList.add('sticky');
+function typeLoop(){
+  let roleIndex = 0;
+  let charIndex = 0;
+  let deleting = false;
+
+  function tick(){
+    const current = roles[roleIndex];
+    if (!deleting){
+      charIndex++;
+      addrTyped.textContent = current.slice(0, charIndex);
+      if (charIndex === current.length){
+        deleting = true;
+        setTimeout(tick, 1400);
+        return;
+      }
+    } else {
+      charIndex--;
+      addrTyped.textContent = current.slice(0, charIndex);
+      if (charIndex === 0){
+        deleting = false;
+        roleIndex = (roleIndex + 1) % roles.length;
+      }
+    }
+    setTimeout(tick, deleting ? 40 : 70);
+  }
+  tick();
+}
+
+if (addrTyped){
+  if (reduceMotion){
+    addrTyped.textContent = roles[0];
   } else {
-    nav.classList.remove('sticky');    
+    typeLoop();
   }
 }
 
-window.addEventListener('scroll', fixedNav);
+// Mobile tab menu
+const tabToggle = document.getElementById('tabToggle');
+const tabList = document.getElementById('tabList');
 
-// Modal 
-var modal = document.getElementById("myModal");
+if (tabToggle && tabList){
+  tabToggle.addEventListener('click', () => {
+    const isOpen = tabList.classList.toggle('open');
+    tabToggle.setAttribute('aria-expanded', isOpen);
+  });
 
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal 
-btn.onclick = function() {
-  modal.style.display = "block";
+  tabList.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      tabList.classList.remove('open');
+      tabToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
 }
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
+// Active tab highlighting on scroll
+const sections = document.querySelectorAll('section[id], .anchor[id]');
+const tabs = document.querySelectorAll('.tab');
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting){
+      tabs.forEach(tab => tab.classList.remove('active'));
+      const activeTab = document.querySelector(`.tab[href="#${entry.target.id}"]`);
+      if (activeTab) activeTab.classList.add('active');
+    }
+  });
+}, { rootMargin: '-45% 0px -45% 0px' });
 
-// Toggle Menu 
-function openNav() {
-  document.getElementById("myNav").style.width = "100%";
-}
-
-function closeNav() {
-  document.getElementById("myNav").style.width = "0%";
-}
-
-const closeBtn = document.getElementById("menu-btn")
-closeBtn.addEventListener("click" , openNav)
+sections.forEach(section => observer.observe(section));

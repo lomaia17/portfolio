@@ -4,300 +4,393 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Giorgi Lomaia — Full-Stack Developer</title>
+    <meta name="description" content="Giorgi Lomaia — full-stack developer in Tbilisi, Georgia. React, PHP, WordPress and Shopify sites built for real clients.">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/glide.core.min.css">
-    <link rel="stylesheet" href="css/glide.theme.min.css">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
     integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="shortcut icon" type="image/png" href="img/icon.png">
   </head>
 
   <body>
-    <!-- Navigation starts from here -->
-    <nav class="navbar">
-      <div class="max-width">
-          <div class="logo"><a href="#">Lom<span>aia.</span></a></div>
-          <ul class="menu">
-              <li><a href="#home" class="menu-btn">Home</a></li>
-              <li><a href="#about" class="menu-btn">About</a></li>
-              <li><a href="#projects" class="menu-btn">Projects</a></li>
-              <li><a href="#skills" class="menu-btn">Skills</a></li>
-              <li><a href="#contact" class="menu-btn">Contact</a></li>
-          </ul>
-          <div class="menu-btn" id="menu-btn">
-              <i class="fas fa-bars" style="position: absolute;
-              right: 20px;
-              top: 34px;"></i>
+    <!-- Browser chrome: doubles as the site nav -->
+    <header class="chrome" id="chrome">
+      <div class="chrome-top">
+        <div class="max-width chrome-top-inner">
+          <div class="dots" aria-hidden="true"><span></span><span></span><span></span></div>
+          <div class="addressbar">
+            <i class="fas fa-lock" aria-hidden="true"></i>
+            <span class="addr-static">giorgilomaia.dev/</span><span class="addr-typed" id="addrTyped"></span><span class="caret" aria-hidden="true"></span>
           </div>
-      </div>
-      <!-- Toggle Navigation Menu -->
-      <div id="myNav" class="overlay">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <div class="overlay-content">
-          <a href="#home" class="menu-btn" onclick="closeNav()">Home</a>
-          <a href="#about" class="menu-btn" onclick="closeNav()">About</a>
-          <a href="#projects" class="menu-btn" onclick="closeNav()">Projects</a>
-          <a href="#skills" class="menu-btn" onclick="closeNav()">Skills</a>
-          <a href="#contact" class="menu-btn" onclick="closeNav()">Contact</a>
+          <a class="chrome-cta" href="#contact">Get in touch</a>
         </div>
       </div>
-    </nav>
-    <!-- Home Page  -->
+      <nav class="tabs max-width" aria-label="Primary">
+        <ul class="tab-list" id="tabList">
+          <li><a href="#home" class="tab" data-tab>home.tsx</a></li>
+          <li><a href="#about" class="tab" data-tab>about.md</a></li>
+          <li><a href="#work" class="tab" data-tab>work/</a></li>
+          <li><a href="#skills" class="tab" data-tab>stack.json</a></li>
+          <li><a href="#contact" class="tab" data-tab>contact.sh</a></li>
+        </ul>
+        <button class="tab-toggle" id="tabToggle" aria-label="Toggle navigation" aria-expanded="false">
+          <i class="fas fa-bars" aria-hidden="true"></i>
+        </button>
+      </nav>
+    </header>
+
+    <!-- Home + About -->
     <section class="home" id="home">
-      <div class="max-width">
-        <div class="home-wrapper">
-          <div class="row">
-            <div class="home-content">
-                <div class="text-1">Hello, my name is</div>
-                <div class="text-2">Giorgi Lomaia</div>
-                <div class="text-3">And I'm a <span class="typing">Full-Stack Developer</span></div>
-                <a href="#" id="myBtn">Hire me</a>
-            </div>
+      <div class="max-width home-wrapper">
+        <div class="home-content">
+          <p class="eyebrow">Tbilisi, Georgia · open to work</p>
+          <h1 class="home-title">Giorgi<br>Lomaia</h1>
+          <p class="home-lede">Full-stack developer. I build websites that work on day one and still hold up a year later — banks, stores, clubs, restaurants.</p>
+          <div class="home-actions">
+            <a href="#work" class="btn btn-primary">See the work</a>
+            <a href="#contact" class="btn btn-ghost">Get in touch</a>
           </div>
-          <div class="img">
-            <img src="img/me.png" alt="">
+
+          <div class="about-block anchor" id="about">
+            <p class="eyebrow">01 — about.md</p>
+            <h2 class="section-title">Ships more than it talks about.</h2>
+            <p>24, based in Tbilisi, Full-stack developer. I care less about the trendiest stack and more about whether the site works for the people actually using it.</p>
+            <p>Most of it comes from real client briefs — a bank, a restaurant brand, a football club — so I move between WordPress, Shopify and plain React depending on what the job calls for, not what's fashionable.</p>
+            <a href="Profile.pdf" target="_blank" class="btn btn-primary">Download CV</a>
+          </div>
+        </div>
+        <div class="home-figure">
+          <div class="profile-card">
+            <div class="mini-chrome">
+              <span class="mini-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="mini-url">whoami</span>
+              <span class="live"><i></i>online</span>
+            </div>
+            <img src="img/me.png" alt="Portrait of Giorgi Lomaia">
+            <div class="profile-facts">
+              <div class="profile-fact"><span>location</span><b>Tbilisi, GE</b></div>
+              <div class="profile-fact"><span>focus</span><b>Full-stack web</b></div>
+              <div class="profile-fact"><span>status</span><b>Open to work</b></div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- About Page -->
-    <section class="about" id="about">
+    <!-- Work -->
+    <section class="work" id="work">
       <div class="max-width">
-        <h2 class="title">About me</h2>
-            <div class="about-content">
-                <div class="column left">
-                    <img src="img/me.png" alt="">
-                </div>
-                <div class="column right">
-                    <div class="text">I'm Giorgi Lomaia <span class="typing-2">Full-Stack Web Developer</span></div>
-                    <p> 👋 Hi there! I’m a 22-year-old tech enthusiast with a passion for web development. Currently, I’m honing my skills in PHP and working towards becoming a Full-Stack Developer. I thrive on building user-friendly, visually appealing, and efficient digital experiences. </p>
-                    </br>
-                      <p style="font-weight: bold;"> Skills & Tools: </p>
-                      <ul style="line-height: 30px;">
-                          <li><strong>Frontend:</strong> HTML, CSS, JavaScript, React.js, Material UI, Tailwind CSS</li>
-                          <li><strong>Backend:</strong> PHP, Node.js (Basics), MongoDB, APIs</li>
-                          <li><strong>Web Development Platforms:</strong> WordPress, WooCommerce, Elementor, WPBakery Page Builder, Shopify, Magento, OpenCart</li>
-                          <li><strong>Other Tools:</strong> Git, Postman, Figma</li>
-                          <li><strong>Additional Expertise:</strong> Technical SEO (Basics), Context API</li>
-                      </ul>
-                    <a href="Profile.pdf" target="_blank">Download CV</a>
-                </div>
+        <p class="eyebrow">02 — work/</p>
+        <h2 class="section-title light">Live, not mockups.</h2>
+        <div class="work-grid">
+
+          <a class="browser-card" href="https://silkbank.ge/" target="_blank" rel="noopener">
+            <div class="mini-chrome">
+              <span class="mini-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="mini-url">silkbank.ge</span>
+              <span class="live"><i></i>live</span>
             </div>
+            <div class="browser-shot"><img src="img/Silk.jpg" alt="Silkbank website"></div>
+            <div class="browser-meta">
+              <h3>Silkbank</h3>
+              <div class="tech-tags"><span>HTML</span><span>CSS</span><span>JS</span><span>WordPress</span></div>
+            </div>
+          </a>
+
+          <a class="browser-card" href="https://shaurmaclub.ge/" target="_blank" rel="noopener">
+            <div class="mini-chrome">
+              <span class="mini-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="mini-url">shaurmaclub.ge</span>
+              <span class="live"><i></i>live</span>
+            </div>
+            <div class="browser-shot"><img src="img/Shaurma.jpg" alt="ShaurmaClub website"></div>
+            <div class="browser-meta">
+              <h3>ShaurmaClub</h3>
+              <div class="tech-tags"><span>HTML</span><span>CSS</span><span>JS</span><span>WordPress</span></div>
+            </div>
+          </a>
+
+          <a class="browser-card" href="https://tajirapps.com/home" target="_blank" rel="noopener">
+            <div class="mini-chrome">
+              <span class="mini-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="mini-url">tajirapps.com</span>
+              <span class="live"><i></i>live</span>
+            </div>
+            <div class="browser-shot"><img src="img/Shopshop.png" alt="ShopShop website"></div>
+            <div class="browser-meta">
+              <h3>ShopShop</h3>
+              <div class="tech-tags"><span>React</span></div>
+            </div>
+          </a>
+
+          <a class="browser-card" href="https://busybeelabs.com/" target="_blank" rel="noopener">
+            <div class="mini-chrome">
+              <span class="mini-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="mini-url">busybeelabs.com</span>
+              <span class="live"><i></i>live</span>
+            </div>
+            <div class="browser-shot"><img src="img/BSB.png" alt="BusyBeeLabs website"></div>
+            <div class="browser-meta">
+              <h3>BusyBeeLabs</h3>
+              <div class="tech-tags"><span>HTML</span><span>CSS</span><span>JS</span><span>Shopify</span></div>
+            </div>
+          </a>
+
+          <a class="browser-card" href="https://gagrafc.ge/" target="_blank" rel="noopener">
+            <div class="mini-chrome">
+              <span class="mini-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="mini-url">gagrafc.ge</span>
+              <span class="live"><i></i>live</span>
+            </div>
+            <div class="browser-shot"><img src="img/Gagra.png" alt="FC Gagra website"></div>
+            <div class="browser-meta">
+              <h3>FC Gagra</h3>
+              <div class="tech-tags"><span>HTML</span><span>CSS</span><span>WordPress</span></div>
+            </div>
+          </a>
+
+          <a class="browser-card" href="https://fabrica1900.ge/" target="_blank" rel="noopener">
+            <div class="mini-chrome">
+              <span class="mini-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="mini-url">fabrica1900.ge</span>
+              <span class="live"><i></i>live</span>
+            </div>
+            <div class="browser-shot"><img src="img/Fabrica.png" alt="Fabrica1900 website"></div>
+            <div class="browser-meta">
+              <h3>Fabrica1900</h3>
+              <div class="tech-tags"><span>HTML</span><span>CSS</span><span>WordPress</span></div>
+            </div>
+          </a>
+
+          <a class="browser-card" href="https://booktennismatch.com/" target="_blank" rel="noopener">
+            <div class="mini-chrome">
+              <span class="mini-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="mini-url">booktennismatch.com</span>
+              <span class="live"><i></i>live</span>
+            </div>
+            <div class="browser-shot"><img src="img/booktennismatch.jpg" alt="BookTennisMatch website"></div>
+            <div class="browser-meta">
+              <h3>BookTennisMatch</h3>
+              <div class="tech-tags"><span>Next.js</span><span>Tailwind CSS</span></div>
+            </div>
+          </a>
+
+          <a class="browser-card" href="https://amirauto.azurewebsites.net/" target="_blank" rel="noopener">
+            <div class="mini-chrome">
+              <span class="mini-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="mini-url">amirauto.azurewebsites.net</span>
+              <span class="live"><i></i>live</span>
+            </div>
+            <div class="browser-shot"><img src="img/amirauto.jpg" alt="AmirAuto client site"></div>
+            <div class="browser-meta">
+              <h3>AmirAuto</h3>
+              <p class="card-note">Client-facing marketplace</p>
+              <div class="tech-tags"><span>Next.js</span><span>Tailwind CSS</span></div>
+            </div>
+          </a>
+
+          <div class="browser-card">
+            <div class="mini-chrome">
+              <span class="mini-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="mini-url">amirauto.azurewebsites.net/admin</span>
+              <span class="live internal"><i></i>internal</span>
+            </div>
+            <div class="browser-shot"><img src="img/amirauto_panel.jpg" alt="AmirAuto admin panel"></div>
+            <div class="browser-meta">
+              <h3>AmirAuto — Admin Panel</h3>
+              <p class="card-note">Separate dashboard: orders, auctions, logistics, finance</p>
+              <div class="tech-tags"><span>Next.js</span><span>Tailwind CSS</span></div>
+            </div>
+          </div>
+
+          <a class="browser-card" href="https://gamify-test.azurewebsites.net/" target="_blank" rel="noopener">
+            <div class="mini-chrome">
+              <span class="mini-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="mini-url">gamify-test.azurewebsites.net</span>
+              <span class="live"><i></i>live</span>
+            </div>
+            <div class="browser-shot"><img src="img/gamify.png" alt="Gamify website"></div>
+            <div class="browser-meta">
+              <h3>Gamify</h3>
+              <div class="tech-tags"><span>Next.js</span><span>Tailwind CSS</span></div>
+            </div>
+          </a>
+
+          <div class="browser-card">
+            <div class="mini-chrome">
+              <span class="mini-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="mini-url">internal tool</span>
+              <span class="live internal"><i></i>internal</span>
+            </div>
+            <div class="browser-shot"><img src="img/iplus.jpg" alt="iplus Rate Operator dashboard"></div>
+            <div class="browser-meta">
+              <h3>iplus — Chat Manager &amp; Rate Operator</h3>
+              <div class="tech-tags"><span>Next.js</span><span>Tailwind CSS</span></div>
+            </div>
+          </div>
+
+          <a class="browser-card" href="https://jbsschool.ge/" target="_blank" rel="noopener">
+            <div class="mini-chrome">
+              <span class="mini-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="mini-url">jbsschool.ge</span>
+              <span class="live"><i></i>live</span>
+            </div>
+            <div class="browser-shot"><img src="img/jbsschool.jpg" alt="JBS School website"></div>
+            <div class="browser-meta">
+              <h3>JBS School</h3>
+              <div class="tech-tags"><span>WordPress</span></div>
+            </div>
+          </a>
+
+          <a class="browser-card" href="https://jbsacademy.ge/" target="_blank" rel="noopener">
+            <div class="mini-chrome">
+              <span class="mini-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="mini-url">jbsacademy.ge</span>
+              <span class="live"><i></i>live</span>
+            </div>
+            <div class="browser-shot"><img src="img/jbsacademy.jpg" alt="JBS Academy website"></div>
+            <div class="browser-meta">
+              <h3>JBS Academy</h3>
+              <div class="tech-tags"><span>WordPress</span></div>
+            </div>
+          </a>
+
+          <a class="browser-card" href="https://nbabasketballschool.ge/" target="_blank" rel="noopener">
+            <div class="mini-chrome">
+              <span class="mini-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="mini-url">nbabasketballschool.ge</span>
+              <span class="live"><i></i>live</span>
+            </div>
+            <div class="browser-shot"><img src="img/nbabasketball.jpg" alt="NBA Basketball School Georgia website"></div>
+            <div class="browser-meta">
+              <h3>NBA Basketball School Georgia</h3>
+              <div class="tech-tags"><span>WordPress</span></div>
+            </div>
+          </a>
+
+          <a class="browser-card" href="https://medimeal.ge/" target="_blank" rel="noopener">
+            <div class="mini-chrome">
+              <span class="mini-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="mini-url">medimeal.ge</span>
+              <span class="live"><i></i>live</span>
+            </div>
+            <div class="browser-shot"><img src="img/medimeal.jpg" alt="Medimeal website"></div>
+            <div class="browser-meta">
+              <h3>Medimeal</h3>
+              <div class="tech-tags"><span>WordPress</span></div>
+            </div>
+          </a>
+
+          <a class="browser-card" href="https://solux.ge/" target="_blank" rel="noopener">
+            <div class="mini-chrome">
+              <span class="mini-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="mini-url">solux.ge</span>
+              <span class="live"><i></i>live</span>
+            </div>
+            <div class="browser-shot"><img src="img/solux.jpg" alt="Solux website"></div>
+            <div class="browser-meta">
+              <h3>Solux</h3>
+              <div class="tech-tags"><span>WordPress</span></div>
+            </div>
+          </a>
+
+          <a class="browser-card" href="https://izohub.ge/" target="_blank" rel="noopener">
+            <div class="mini-chrome">
+              <span class="mini-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="mini-url">izohub.ge</span>
+              <span class="live"><i></i>live</span>
+            </div>
+            <div class="browser-shot"><img src="img/izohub.jpg" alt="IzoHub website"></div>
+            <div class="browser-meta">
+              <h3>IzoHub</h3>
+              <div class="tech-tags"><span>Angular</span></div>
+            </div>
+          </a>
+
+          <a class="browser-card" href="https://midamoarchitecture.com/" target="_blank" rel="noopener">
+            <div class="mini-chrome">
+              <span class="mini-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="mini-url">midamoarchitecture.com</span>
+              <span class="live"><i></i>live</span>
+            </div>
+            <div class="browser-shot"><img src="img/midamo.jpg" alt="Midamo Architecture website"></div>
+            <div class="browser-meta">
+              <h3>Midamo Architecture</h3>
+              <div class="tech-tags"><span>WordPress</span></div>
+            </div>
+          </a>
+
+        </div>
       </div>
     </section>
-    
-   <!-- Projects Page -->
-   <section class="projects" id="projects">
-    <div class="max-width">
-      <h2 class="title">My Experience</h2>
-      <div class="project-content">
-      <div class="glide">
-        <div class="glide__track" data-glide-el="track">
-          <ul class="glide__slides">
-            <li class="glide__slide">
-              <div class="card">
-                <div class="box">
-                    <a href="https://silkbank.ge/" target="_blank">
-                      <img src="img/Silk.jpg" alt="">
-                      <div class="text">Silkbank</div>
-                      <p class="line-height">Technologies💻:HTML, CSS , JS, Wordpress</p>
-                    </a> 
-                </div>
-            </div>
-            </li>
-            <li class="glide__slide">
-              <div class="card" style="padding-bottom: 40px;">
-                <div class="box">
-                    <a href="https://shaurmaclub.ge/" target="_blank">
-                      <img src="img/Shaurma.jpg" alt="">
-                      <div class="text">ShaurmaClub</div>
-                      <p class="line-height">Technologies💻:HTML, CSS , JS,Wordpress</p>
-                    </a>
-                </div>
-            </div>
-            </li>
-            <li class="glide__slide">
-              <div class="card">
-                <div class="box">
-                  <a href="https://tajirapps.com/home" target="_blank">
-                    <img src="img/Shopshop.png" alt="">
-                    <div class="text">ShopShop</div>
-                    <p class="line-height">Technologies💻:ReactJS</p>
-                  </a>
-                </div>
-            </div>
-            </li>
-            <li class="glide__slide">
-              <div class="card" style="padding-bottom: 40px;">
-                <div class="box">
-                    <a href="https://busybeelabs.com/" target="_blank">
-                      <img src="img/BSB.png" alt="">
-                      <div class="text">BusyBeeLabs</div>
-                      <p class="line-height">Technologies💻:HTML, CSS , JS, Shopify</p>
-                    </a>
-                </div>
-            </div>
-            </li>
-            <li class="glide__slide">
-              <div class="card" style="padding-bottom: 40px;">
-                <div class="box">
-                    <a href="https://gagrafc.ge/" target="_blank">
-                      <img src="img/Gagra.png" alt="">
-                      <div class="text">FC Gagra</div>
-                      <p class="line-height">Technologies💻:HTML, CSS , Wordpress</p>
-                    </a>
-                </div>
-            </div>
-            </li>
-            <li class="glide__slide">
-              <div class="card" style="padding-bottom: 40px;">
-                <div class="box">
-                    <a href="https://fabrica1900.ge/" target="_blank">
-                      <img src="img/Fabrica.png" alt="">
-                      <div class="text">Fabrica1900</div>
-                      <p class="line-height">Technologies💻:HTML, CSS , Wordpress</p>
-                    </a>
-                </div>
-            </div>
-            </li>
-          </ul>
-        </div>
-        <div class="glide__arrows" data-glide-el="controls">
-          <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><i class="fas fa-angle-left"></i></button>
-          <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><i class="fas fa-angle-right"></i></button>
-        </div>
-      </div>
-      </div>
-    </div>
-   </section>
-     <!-- Skills section start -->
-     <section class="skills" id="skills">
-      <div class="max-width">
-          <h2 class="title">My Skills</h2>
-          <div class="serv-content">
-              <div class="card">
-                  <div class="box">
-                      <img src="img/html.png" alt="">
-                      <div class="text" style="margin-top: 35px;">HTML</div>
-                  </div>
-              </div>
-              <div class="card">
-                  <div class="box">
-                      <img src="img/css.png" alt="">
-                      <div class="text">CSS</div>
-                      <p>Frameworks : Bootstrap , Tailwind.</p>
-                  </div>
-              </div>
-              <div class="card">
-                  <div class="box">
-                      <img src="img/js.png" alt="">
-                      <div class="text"  style="margin-top:28px;">Javascript</div>
-                      <p>Libraries: Jquery , ReactJS</p>
-                  </div>
-              </div>
-              <div class="card">
-                <div class="box">
-                    <img src="img/php.svg" alt="">
-                    <div class="text"  style="margin-top:28px;">PHP</div>
-                    <p>Libraries: Laravel</p>
-                </div>
-            </div>
-             </div>
-          </div>
-      </div>
-  </section>
 
-  <!-- Contact Section -->
-  <section class="contact" id="contact">
-    <div class="max-width">
-        <h2 class="title">Contact me</h2>
+    <!-- Skills -->
+    <section class="skills" id="skills">
+      <div class="max-width">
+        <p class="eyebrow">03 — stack.json</p>
+        <h2 class="section-title">The stack, honestly.</h2>
+        <div class="stack-grid">
+          <div class="stack-group">
+            <h3>Frontend</h3>
+            <div class="tech-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>React.js</span><span>Next.js</span><span>Material UI</span><span>Tailwind CSS</span></div>
+          </div>
+          <div class="stack-group">
+            <h3>Backend</h3>
+            <div class="tech-tags"><span>PHP</span><span>Node.js</span><span>MongoDB</span><span>REST APIs</span></div>
+          </div>
+          <div class="stack-group">
+            <h3>Platforms</h3>
+            <div class="tech-tags"><span>WordPress</span><span>WooCommerce</span><span>Elementor</span><span>WPBakery</span><span>Shopify</span><span>Magento</span><span>OpenCart</span></div>
+          </div>
+          <div class="stack-group">
+            <h3>Tools &amp; other</h3>
+            <div class="tech-tags"><span>Git</span><span>Postman</span><span>Figma</span><span>Technical SEO</span><span>Context API</span><span>n8n automation</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+      <div class="max-width">
+        <p class="eyebrow">04 — contact.sh</p>
+        <h2 class="section-title light">Run this to reach me.</h2>
         <div class="contact-content">
-            <div class="column left">
-                <div class="text">Get in Touch</div>
-                <div class="icons">
-                    <div class="row">
-                        <i class="fas fa-user"></i>
-                        <div class="info">
-                            <div class="head">Name</div>
-                            <div class="sub-title">Giorgi Lomaia</div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div class="info">
-                            <div class="head">Address</div>
-                            <div class="sub-title">Tbilisi, Georgia</div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <i class="fas fa-envelope"></i>
-                        <div class="info">
-                            <div class="head">Email</div>
-                            <div class="sub-title">giorgilomaia1710@gmail.com</div>
-                        </div>
-                    </div>
-                    <div class="row">
-                      <i class="fas fa-phone"></i>
-                      <div class="info">
-                          <div class="head">Phone</div>
-                          <div class="sub-title">+995-592-09-37-37</div>
-                      </div>
-                  </div>
-                </div>
-            </div>
-        </div>
-      </div>
-    </section>
-    <!-- Modal --> 
-    <div id="myModal" class="modal">
-      <!-- Modal content -->
-      <div class="modal-content">
-        <div class="modal-header">
-          <h2>Contact Me</h2>
-          <span class="close">&times;</span>
-        </div>
-        <div class="modal-body">
-          <p>My Social Media Links:</p>
-        </div>
-        <div class="modal-footer">
-          <div class="soc-icons">
-            <a href="https://www.facebook.com/profile.php?id=100053544300179" target="_blank">
-             <i class="fab fa-facebook"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/giorgilomaia/" target="_blank">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-            <a href="mailto:giorgilomaia1710@gmail.com" target="_blank">
-              <i class="fa fa-envelope"></i>
-            </a>  
+          <div class="terminal">
+            <div class="terminal-row"><span class="flag">--name</span><span class="val">Giorgi Lomaia</span></div>
+            <div class="terminal-row"><span class="flag">--location</span><span class="val">Tbilisi, Georgia</span></div>
+            <div class="terminal-row"><span class="flag">--email</span><span class="val"><a href="mailto:giorgilomaia1710@gmail.com">giorgilomaia1710@gmail.com</a></span></div>
+            <div class="terminal-row"><span class="flag">--phone</span><span class="val"><a href="tel:+995592093737">+995 592 09 37 37</a></span></div>
           </div>
         </div>
       </div>
-    </div>
-    
-  <!-- Glide Js -->
-  <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
-  <script>
-    const config = {
-      type: "carousel",
-      perView: 3,
-      breakpoints:{
-        1024: {
-          perView:2
-        },
-        768: {
-          perView:1
-        }
-      }
-    };
-    new Glide('.glide', config).mount()
-  </script>
-  <!-- Javascript -->
-   <script src="main.js"> 
+    </section>
 
-  </script>
+    <footer class="site-footer">
+      <div class="max-width footer-inner">
+        <div class="footer-brand">
+          <span class="footer-logo">Lom<span>aia.</span></span>
+          <p>&copy; 2026 — built from scratch, no template.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer">
+          <a href="#home">home.tsx</a>
+          <a href="#about">about.md</a>
+          <a href="#work">work/</a>
+          <a href="#skills">stack.json</a>
+          <a href="#contact">contact.sh</a>
+        </nav>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/profile.php?id=100053544300179" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="https://www.linkedin.com/in/giorgilomaia/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="mailto:giorgilomaia1710@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="main.js"></script>
   </body>
 </html>
